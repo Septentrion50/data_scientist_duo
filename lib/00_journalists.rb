@@ -20,4 +20,19 @@ def find_min(arr)
   end
 end
 
-puts find_min(handles)
+def ch_num_pop(arr, ch_nb)
+    puts "Quels sont les handles de 5 caracteres"
+    b = Array.new
+    arr.each do |single|
+        if single.length == (ch_nb.to_i + 1)  
+            b<<single
+        else
+        end 
+    end
+    puts " " 
+    puts "Le nombre de handle de 5 caracteres est de #{b.length}"
+
+end
+
+
+ch_num_pop(handles, 5)
