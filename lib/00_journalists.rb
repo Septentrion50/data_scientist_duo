@@ -63,4 +63,8 @@ def sort_len(arr)
   end
 end
 
-puts sort_len(handles)
+def trouver(arr, nom)
+  return arr.index(nom)
+end
+
+puts trouver(handles, "@epenser")
