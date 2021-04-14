@@ -31,8 +31,19 @@ def ch_num_pop(arr, ch_nb)
     end
     puts " " 
     puts "Le nombre de handle de 5 caracteres est de #{b.length}"
+end
 
+def which_maj(arr)
+  # Trouve le nombre de handles commençant par une majuscule.
+  count = 0
+  arr.each do |i|
+   clean_h = i.slice(1..-1)
+   if clean_h[0] == clean_h.upcase[0]
+     count += 1
+   end
+  end
+  return "Le nombre de handles commençant par une majuscule est de #{count}." 
 end
 
 
-ch_num_pop(handles, 5)
+puts which_maj(handles)
