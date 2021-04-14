@@ -67,4 +67,10 @@ def trouver(arr, nom)
   return arr.index(nom)
 end
 
-puts trouver(handles, "@epenser")
+#puts trouver(handles, "@epenser")
+
+def count_elmts_by_len(arr)
+  return arr.map(&:length).tally
+end
+
+puts count_elmts_by_len(handles)
