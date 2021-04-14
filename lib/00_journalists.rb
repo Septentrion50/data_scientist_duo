@@ -12,4 +12,12 @@ def array_len(arr)
   end
 end
 
-puts array_len(handles)
+def find_min(arr)
+  if arr.length == 0
+    return "Cet array est vide"
+  else
+    return "#{arr.min(1) {|arr,x| arr.length <=> x.length}}" # Ce truc marche, mais on ne comprend pas pourquoi
+  end
+end
+
+puts find_min(handles)
