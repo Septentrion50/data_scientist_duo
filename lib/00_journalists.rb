@@ -45,9 +45,9 @@ def which_maj(arr)
   return "Le nombre de handles commençant par une majuscule est de #{count}." 
 end
 
-def sort_alpha(handles)
+def sort_alpha(arr)
     c=Array.new
-    handles.each do |singled|
+    arr.each do |singled|
       singled = singled.delete_prefix("@")
       c << singled
     end
@@ -73,4 +73,38 @@ def count_elmts_by_len(arr)
   return arr.map(&:length).tally
 end
 
-puts count_elmts_by_len(handles)
+def perform(arr, ch_nb, nom)
+  puts "Combien y a-t-il de handle dans cette array ? "
+  puts
+  puts array_len(arr)
+  puts
+  puts "Quel est le handle le plus court de cette liste ?"
+  puts
+  puts find_min(arr)
+  puts
+  puts "Combien y-a-t'il de handle contenant 5 caractères (le @ ne compte pas pour un caractère)"
+  puts
+  ch_num_pop(arr, ch_nb)
+  puts
+  puts "Combien commencent par une majuscule (première lettre juste après le @) ?"
+  puts
+  puts which_maj(arr)
+  puts
+  puts "Trie la liste de handle par ordre alphabétique."
+  puts
+  sort_alpha(arr)
+  puts
+  puts "Trie la liste de handle par taille des handle (les plus petits en premiers, les plus grands après)"
+  puts
+  puts sort_len(arr)
+  puts
+  puts "Quelle est la position dans l'array de la personne @epenser ?"
+  puts
+  puts trouver(arr, nom)
+  puts
+  puts "Sors-moi une répartition des handle par taille de ces derniers (nombre de handle avec 1 caractère, nombre de handle avec 2 caractères, nombre de handle avec 3 caractères, etc)"
+  puts
+  puts count_elmts_by_len(arr)
+end
+
+perform(handles, 5, "@epenser") 
