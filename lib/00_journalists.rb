@@ -53,7 +53,7 @@ def majuscule(handles)
     handles.each do |singled|
         singled = singled.delete_prefix("@")
             c<<singled
-            c = singled.delete_prefix("_")
+            c = c.delete_prefix("_")
             d<<singled
        end
     
@@ -64,5 +64,3 @@ def majuscule(handles)
 majuscule(a)
     
 
-
-puts which_maj(handles)
