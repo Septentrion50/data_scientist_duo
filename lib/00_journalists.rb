@@ -46,4 +46,23 @@ def which_maj(arr)
 end
 
 
+def majuscule(handles)
+    c=Array.new
+    d=Array.new
+    puts "Combien de Handle ont une majuscule en début : "
+    handles.each do |singled|
+        singled = singled.delete_prefix("@")
+            c<<singled
+            c = singled.delete_prefix("_")
+            d<<singled
+       end
+    
+    puts d.sort
+    
+    end
+    
+majuscule(a)
+    
+
+
 puts which_maj(handles)
