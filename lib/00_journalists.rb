@@ -21,16 +21,16 @@ def find_min(arr)
 end
 
 def ch_num_pop(arr, ch_nb)
-    puts "Quels sont les handles de 5 caracteres"
-    b = Array.new
-    arr.each do |single|
-        if single.length == (ch_nb.to_i + 1)  
-            b<<single
-        else
-        end 
-    end
-    puts " " 
-    puts "Le nombre de handle de 5 caracteres est de #{b.length}"
+  puts "Quels sont les handles de 5 caracteres"
+  b = Array.new
+  arr.each do |single|
+    if single.length == (ch_nb.to_i + 1)  
+      b << single
+    else
+    end 
+  end
+  puts " " 
+  puts "Le nombre de handle de 5 caracteres est de #{b.length}"
 end
 
 def which_maj(arr)
@@ -45,22 +45,22 @@ def which_maj(arr)
   return "Le nombre de handles commençant par une majuscule est de #{count}." 
 end
 
-
-def majuscule(handles)
+def sort_alpha(handles)
     c=Array.new
-    d=Array.new
-    puts "Combien de Handle ont une majuscule en début : "
     handles.each do |singled|
-        singled = singled.delete_prefix("@")
-            c<<singled
-            c = c.delete_prefix("_")
-            d<<singled
-       end
-    
-    puts d.sort
-    
+      singled = singled.delete_prefix("@")
+      c << singled
     end
+    puts c.sort
+end
     
-majuscule(a)
-    
+def sort_len(arr)
+  # Trie l'array donné en fonction de la longueur des éléments.
+  if arr.length <= 0
+    return "Cet array est vide"
+  else
+    return arr.sort {|arr, x| arr.length <=> x.length}
+  end
+end
 
+puts sort_len(handles)
